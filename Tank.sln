@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.csproj", "{67181E9A-FEC6-DE0E-C000-2E9636516469}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Mathematics", "Unity.Mathematics.csproj", "{FC7C6F0F-0A16-9393-0B2E-1172BF5FC6CA}"
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Common.Runtime", "Unity.2D.Common.Runtime.csproj", "{FDAF4A28-095B-71DD-618C-3F0815178F33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InternalAPIEngineBridge.001", "Unity.InternalAPIEngineBridge.001.csproj", "{E85315C0-5498-742E-9793-1A7319B73E3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{BE59C06D-9AAC-64A8-0390-8CA6FBC949DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditor.TestRunner", "UnityEditor.TestRunner.csproj", "{6E8CF373-008C-3C85-F781-5B839B40A139}"
 EndProject
@@ -119,6 +121,10 @@ Global
 		{E85315C0-5498-742E-9793-1A7319B73E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E85315C0-5498-742E-9793-1A7319B73E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E85315C0-5498-742E-9793-1A7319B73E3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE59C06D-9AAC-64A8-0390-8CA6FBC949DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE59C06D-9AAC-64A8-0390-8CA6FBC949DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE59C06D-9AAC-64A8-0390-8CA6FBC949DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE59C06D-9AAC-64A8-0390-8CA6FBC949DD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E8CF373-008C-3C85-F781-5B839B40A139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E8CF373-008C-3C85-F781-5B839B40A139}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E8CF373-008C-3C85-F781-5B839B40A139}.Release|Any CPU.ActiveCfg = Release|Any CPU
