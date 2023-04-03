@@ -1,0 +1,10 @@
+.vscode
+.vs
+.git
+Logs/
+obj/
+Library/
+ProjectSettings/
+UserSettings/
+Packages/
+Temp/
