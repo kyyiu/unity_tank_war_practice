@@ -5,10 +5,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private float moveSpeed = 3;
+    private SpriteRenderer sr;
+    public Sprite[] move;
+    private void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -21,6 +26,15 @@ public class Player : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
+        if (h!=0)
+        {
+            sr.sprite = move[h < 0 ? 3 : 1];
+        }
+        if (v!=0)
+        {
+            sr.sprite = move[v < 0 ? 2 : 0];
+        }
+        
         transform.Translate(Vector3.right * h * moveSpeed * Time.deltaTime, Space.World);
         transform.Translate(Vector3.up * v * moveSpeed * Time.deltaTime, Space.World);
     }
