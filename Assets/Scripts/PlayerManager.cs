@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour
 {
     public int life = 3;
@@ -39,6 +40,7 @@ public class PlayerManager : MonoBehaviour
         if (life <= 0)
         {
             isDefeat = true;
+            Invoke("ReturnTheme", 4);
             return;
         }
         life--;
@@ -66,5 +68,10 @@ public class PlayerManager : MonoBehaviour
         }
         scoreText.text = score.ToString();
         lifeText.text = life.ToString();
+    }
+
+    private void ReturnTheme()
+    {
+        SceneManager.LoadScene(0);
     }
 }

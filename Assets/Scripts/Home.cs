@@ -7,6 +7,7 @@ public class Home : MonoBehaviour
     private SpriteRenderer sr;
     public GameObject explosionPrefab;
     public Sprite broken;
+    public AudioClip die;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +26,6 @@ public class Home : MonoBehaviour
         PlayerManager.Instance.isDefeat = true;
         sr.sprite = broken;
         Instantiate(explosionPrefab, transform.position, transform.rotation);
+        AudioSource.PlayClipAtPoint(die, transform.position);
     }
 }
