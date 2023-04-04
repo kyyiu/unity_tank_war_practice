@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Born.cs" />
     <Compile Include="Assets\Scripts\Gen.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Option.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
