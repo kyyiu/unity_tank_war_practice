@@ -22,6 +22,7 @@ public class Home : MonoBehaviour
 
     public void Die()
     {
+        PlayerManager.Instance.isDefeat = true;
         sr.sprite = broken;
         Instantiate(explosionPrefab, transform.position, transform.rotation);
     }

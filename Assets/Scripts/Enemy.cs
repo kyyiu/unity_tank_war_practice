@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     public GameObject explosion;
 
     float h = 0;
-    float v = 0;
+    float v = -1;
     private float changeDirectionTime = 4;
     private void Awake()
     {
@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        PlayerManager.Instance.score++;
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }

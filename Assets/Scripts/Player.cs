@@ -28,12 +28,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerManager.Instance.isDefeat)
+        {
+            return;
+        }
         defend();
         Ttk();
     }
 
     private void FixedUpdate()
     {
+        if (PlayerManager.Instance.isDefeat)
+        {
+            return;
+        }
         UserControll();
     }
 
@@ -57,13 +65,13 @@ public class Player : MonoBehaviour
         {
             return;
         }
+        PlayerManager.Instance.isDead = true;
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
     private void UserControll()
     {
-        
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         if (h!=0)
