@@ -10,6 +10,12 @@ public class Player : MonoBehaviour
     private Vector3 bulletEulerAngles;
     public GameObject bulletPrefab;
     public Sprite[] move;
+    private float cd = 0.4f;
+    private float cdTime;
+    public GameObject explosion;
+    private bool isDefend = true;
+    private float defendTime = 1.5f;
+    public GameObject defendPrefab;
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -22,12 +28,37 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        defend();
         Ttk();
     }
 
     private void FixedUpdate()
     {
         UserControll();
+    }
+
+    private void defend()
+    {
+        if (isDefend)
+        {
+            defendTime -= Time.deltaTime;
+            defendPrefab.SetActive(true);
+            if (defendTime <= 0)
+            {
+                isDefend = false;
+                defendPrefab.SetActive(false);
+            }
+        }
+    }
+
+    private void Die()
+    {
+        if (isDefend)
+        {
+            return;
+        }
+        Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 
     private void UserControll()
@@ -53,11 +84,16 @@ public class Player : MonoBehaviour
 
     private void Ttk()
     {
+        if (cdTime < cd)
+        {
+            cdTime += Time.deltaTime;
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("sss");
             // 子弹产生的角度= 当前角色的角度+ 子弹应该旋转的角度
             Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.eulerAngles + bulletEulerAngles ));
+            cdTime = 0;
         }
     }
 }
