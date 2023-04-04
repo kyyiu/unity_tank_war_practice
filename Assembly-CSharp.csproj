@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\Home.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Born.cs" />
+    <Compile Include="Assets\Scripts\Gen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

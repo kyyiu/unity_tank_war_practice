@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
         UserControll();
     }
 
-    private void Die()
+    public void Die()
     {
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
@@ -95,7 +95,16 @@ public class Enemy : MonoBehaviour
             cdTime += Time.deltaTime;
             return;
         }
+        Debug.Log("EEE");
         Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.eulerAngles + bulletEulerAngles));
         cdTime = 0;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "ETank")
+        {
+            changeDirectionTime = 4;
+        }
     }
 }

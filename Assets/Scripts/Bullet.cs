@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Wall"+ collision.tag);
+        Debug.Log("Wall"+ collision.tag+ playerFlag);
         switch (collision.tag)
         {
             case "Tank":
@@ -46,8 +46,8 @@ public class Bullet : MonoBehaviour
                 if (playerFlag == 1)
                 {
                     collision.SendMessage("Die");
+                    Destroy(gameObject);
                 }
-                Destroy(gameObject);
                 break;
             default:
                 break;

@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         if (isDefend)
         {
